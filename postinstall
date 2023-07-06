@@ -5,7 +5,7 @@
 PREF="${HOMEBREW_PREFIX:-/usr/local}"
 FDIR="/share/zsh/site-functions"
 
-HOMED=~$(whoami)
+eval HOMED=~$(whoami)
 if
   echo $FPATH | grep -q "${PREF}/${FDIR}"
 then
