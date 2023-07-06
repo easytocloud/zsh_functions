@@ -10,7 +10,7 @@ if
 then
   echo "FPATH contains ${PREF}/${FDIR}"
 else
-  echo "Adding Homebrew functions to zsh function path"
-  echo "\n# added by postinstall of product ${PWD##*/}\n" >> ~/.zshenv
-  echo "FPATH=${FPATH}:${PREF}/${FDIR}" >> ~/.zshenv
+  echo "Adding Homebrew functions to zsh function path in ${HOME}/.zshenv"
+  echo "\n# added by postinstall of product ${PWD##*/}\n" >> ${HOME}/.zshenv
+  echo "FPATH=${FPATH}:${PREF}/${FDIR}" >> ${HOME}/.zshenv
 fi
