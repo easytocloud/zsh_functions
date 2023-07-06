@@ -5,12 +5,13 @@
 PREF="${HOMEBREW_PREFIX:-/usr/local}"
 FDIR="/share/zsh/site-functions"
 
+HOMED=~$(whoami)
 if
   echo $FPATH | grep -q "${PREF}/${FDIR}"
 then
   echo "FPATH contains ${PREF}/${FDIR}"
 else
-  echo "Adding Homebrew functions to zsh function path in ${HOME}/.zshenv"
-  echo "\n# added by postinstall of product ${PWD##*/}\n" >> ${HOME}/.zshenv
-  echo "FPATH=${FPATH}:${PREF}/${FDIR}" >> ${HOME}/.zshenv
+  echo "Adding Homebrew functions to zsh function path in ${HOMED}"
+  echo "# added by postinstall of product ${PWD##*/}" >> ${HOMED}/.zshenv
+  echo "FPATH=\${FPATH}:${PREF}/${FDIR}" >> ${HOMED}/.zshenv
 fi
