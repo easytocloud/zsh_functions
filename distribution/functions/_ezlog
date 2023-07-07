@@ -1,0 +1,8 @@
+# --- log
+#
+#       write timestemped log message with parameter(s)
+#
+_ezlog()
+{
+    echo "$(date ${LOGDATEFORMAT}) - $@"
+}

@@ -1,0 +1,7 @@
+_ezdie()
+{
+    _error "$@"
+    exit 1
+
+}
+
