@@ -9,10 +9,7 @@ eval HOMED=~$(whoami)
 if
   echo $FPATH | grep -q "${PREF}/${FDIR}"
 then
-  echo "FPATH contains ${PREF}/${FDIR}"
+  echo "FPATH already contains ${PREF}/${FDIR}"
 else
-  echo "Adding Homebrew functions to zsh function path in ${HOMED}"
-  echo "# added by postinstall of product ${PWD##*/}" >> ${HOMED}/.zshenv
-  export FPATH FDIR
-  $( sudo -u$(whoami) echo "FPATH=\${FPATH}:${PREF}/${FDIR}" >> ${HOMED}/.zshenv )
+  echo "Add Homebrew functions path ${PREF}/${FDIR} to zsh function path in ${HOMED}/.zshenv"
 fi
