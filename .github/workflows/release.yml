@@ -46,6 +46,11 @@ jobs:
 
             system "./postinstall"
 
+          caveats: |
+            <<~EOS
+              To activate easytocloud zsh_functions, add the following to your ~/.zshenv:
+                FPATH=${FPATH}:#{HOMEBREW_PREFIX}/share/zsh/site-functions
+            EOS
           # Custom test command for your formula so you can run `brew test`.
           # Optional - string.
           # test: 'assert_match("Please set AWS_PROFILE before calling akskrotate", shell_output("akskrotate 2>&1", 1))'
