@@ -13,5 +13,6 @@ then
 else
   echo "Adding Homebrew functions to zsh function path in ${HOMED}"
   echo "# added by postinstall of product ${PWD##*/}" >> ${HOMED}/.zshenv
-  echo "FPATH=\${FPATH}:${PREF}/${FDIR}" >> ${HOMED}/.zshenv
+  export FPATH FDIR
+  $( sudo -u$(whoami) echo "FPATH=\${FPATH}:${PREF}/${FDIR}" >> ${HOMED}/.zshenv )
 fi
