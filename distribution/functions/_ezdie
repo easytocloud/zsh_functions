@@ -1,6 +1,6 @@
 _ezdie()
 {
-    _error "$@"
+    _ezerror "$@"
     exit 1
 
 }

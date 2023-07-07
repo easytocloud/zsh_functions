@@ -1,5 +1,5 @@
 _ezdebug()
 {
-    ${__debug} && _log "$@"
+    ${__debug} && _ezlog "$@"
 
 }
